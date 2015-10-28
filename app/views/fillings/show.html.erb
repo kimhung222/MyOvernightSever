@@ -1,0 +1,11 @@
+<center>
+	<h>Filling Question No <%= @filling.id %> </h>
+	<p>Content:</p>
+	<%= @filling.content %><br>
+	<br>Score :<%= @filling.score %><br>
+	Field :<%= @filling.field %><br>
+	Answer :<%= @filling.answer %><br>
+	Created at : <%= @filling.created_at %><br>
+	Updated at : <%= @filling.updated_at %><br>
+</center>
+<%= link_to 'Back to', fillings_path %>

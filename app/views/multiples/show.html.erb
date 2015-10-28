@@ -1,0 +1,26 @@
+<center>
+	<h>Multiple Choice Question No <%= @multiple.id %> </h>
+	<p>Content:</p>
+	<%= @multiple.content %><br>
+	<br>Score :<%= @multiple.score %><br>
+	Field :<%= @multiple.field %><br>
+	<p> Choices: </p>
+  <table>
+    <tr>
+      <th> Choice A:</th>
+      <th><%= @multiple.A %></th>
+      <th> Choice B:</th>
+      <th><%= @multiple.B %></th>
+    </tr>
+    <tr>
+      <th> Choice C:</th>
+      <th><%= @multiple.C %></th>
+      <th> Choice D:</th>
+      <th><%= @multiple.D %></th>
+    </tr>
+  </table>
+	Answer :<%= @multiple.answer %><br>
+	Created at : <%= @multiple.created_at %><br>
+	Updated at : <%= @multiple.updated_at %><br>
+</center>
+<%= link_to 'Back to', multiples_path %>

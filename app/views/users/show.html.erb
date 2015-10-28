@@ -1,0 +1,10 @@
+<center>User No <%=@user.id %></center>
+
+	<center>
+		
+			 Name          : <%= @user.name %>	<br>
+			 Email 		   : <%= @user.email %> <br>
+			 Participate on: <%= @user.created_at %> <br>
+		
+	</center>
+<%= link_to 'Back',users_path %>

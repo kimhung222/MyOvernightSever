@@ -1,0 +1,11 @@
+<center>
+	<h>Filling Question No <%= @yesno.id %> </h>
+	<p>Content:</p>
+	<%= @yesno.content %><br>
+	<br>Score :<%= @yesno.score %><br>
+	Field :<%= @yesno.field %><br>
+	Answer :<%= @yesno.answer %><br>
+	Created at : <%= @yesno.created_at %><br>
+	Updated at : <%= @yesno.updated_at %><br>
+</center>
+<%= link_to 'Back to', yesnos_path %>

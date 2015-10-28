@@ -1,0 +1,52 @@
+
+<center>
+	<h> Listing all the Type of Question </h>
+	<table>
+  <tr>
+    <th>ID</th>
+    <th>Field</th>
+    <th>Type of Question</th>
+    <th>Score</th>
+  </tr>
+ 
+  <% @fillings.each do |filling| %>
+    <tr>
+      <th>FL<%= filling.id %></th>
+      <th><%= filling.field %></th>
+      <th> Filling  </th>
+      <th><%= filling.score %></th>
+      <th><%= link_to 'Show', filling_path(filling) %></th>
+      <th><%= link_to 'Edit', edit_filling_path(filling) %></th>
+      <th><%= link_to 'Destroy', filling_path(filling),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></th>
+    </tr>
+  <% end %>
+  <% @multiples.each do |multiple| %>
+    <tr>
+      <th>MC<%= multiple.id %></th>
+      <th><%= multiple.field %></th>
+      <th>Multiple Choice</th>
+      <th><%= multiple.score %></th>
+      <th><%= link_to 'Show', multiple_path(multiple) %></th>
+      <th><%= link_to 'Edit', edit_multiple_path(multiple) %></th>
+      <th><%= link_to 'Destroy', multiple_path(multiple),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></th>
+    </tr>
+  <% end %>
+  <% @yesnos.each do |yesno| %>
+    <tr>
+      <th>YN<%= yesno.id %></th>
+      <th><%= yesno.field %></th>
+      <th>Yes-No</th>
+      <th><%= yesno.score %></th>
+      <th><%= link_to 'Show', yesno_path(yesno) %></th>
+      <th><%= link_to 'Edit', edit_yesno_path(yesno) %></th>
+      <th><%= link_to 'Destroy', yesno_path(yesno),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></th>
+    </tr>
+  <% end %>
+</table>
+</center>

@@ -1,0 +1,56 @@
+<%= provide(:title,'Editing Multiple Choice Question') %>
+<center>
+	<h> Edit a Multiple Choice Question </h>
+
+	<%= form_for @multiple ,url: multiple_path(@multiple),method: :patch do |f| %>
+ 		<% if @multiple.errors.any? %>
+    		<div id="error_explanation">
+     			 <h2>
+       				 <%= pluralize(@multiple.errors.count, "error") %> prohibited
+       				 this user from being saved:
+      			 </h2>
+     			 <ul>
+       				 <% @multiple.errors.full_messages.each do |msg| %>
+          			<li><%= msg %></li>
+       				 <% end %>
+      			 </ul>
+   		    </div>
+  		<% end %>
+  		
+ 	<%= f.label "Content" %><br>
+	<%= f.text_area :content %><br><br>
+
+    <%= f.label "Field" %><br>
+    <%= f.radio_button :field, "Food and Drink" %> Food and Drink
+    <%= f.radio_button :field, "General Knowledge"  %> General Knowledge
+    <%= f.radio_button :field, "History" %> History
+    <%= f.radio_button :field, "Geography"  %> Geography
+    <%= f.radio_button :field, "Music" %> Music 
+    <%= f.radio_button :field, "Entertainment"  %> Entertainment    
+    <%= f.radio_button :field, "Sport" %> Sport
+    <%= f.radio_button :field, "Science and Nature" %> Science and Nature <br> 
+
+	<%= f.label  "Score" %><br>
+	<%= f.text_field :score %><br>
+  <p> Choice : </p>
+  <table>
+    <tr>
+      <%= f.label "Choice A" %>
+      <%= f.text_area :A %>
+      <%= f.label "Choice B" %>
+      <%= f.text_area :B %>
+    </tr>
+    <tr>
+      <%= f.label "Choice C" %>
+      <%= f.text_area :C %>
+      <%= f.label "Choice D" %>
+      <%= f.text_area :D %>
+    </tr>
+  </table>
+
+	<%= f.label  "Answer" %><br>
+	<%= f.text_field :answer %><br>
+	<%= f.submit "Update Multiple-Choice Question", class: "btn btn-primary" %>
+<% end %> 			
+
+</center>

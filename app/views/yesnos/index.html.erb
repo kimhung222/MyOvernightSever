@@ -1,0 +1,27 @@
+
+<center>
+<h1>Listing Yes-No questions</h1>
+
+<td><%= link_to 'Create a Yes-No questions', new_yesno_path %>
+ 
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Field</th>
+    <th>Score</th>
+  </tr>
+ 
+  <% @yesnos.each do |yesno| %>
+    <tr>
+      <th><%= yesno.id %></th>
+      <th><%= yesno.field %></th>
+      <th><%= yesno.score %></th>
+      <th><%= link_to 'Show', yesno_path(yesno) %></th>
+      <th><%= link_to 'Edit', edit_yesno_path(yesno) %></th>
+      <th><%= link_to 'Destroy', yesno_path(yesno),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></th>
+    </tr>
+  <% end %>
+</table>
+</center>
